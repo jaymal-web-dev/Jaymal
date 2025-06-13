@@ -253,19 +253,6 @@ $(function() {
         return false;
     });
 
-    $(window).on("load", function() {
-
-        /* ----------------------------------------------------------- */
-        /*  PAGE PRELOADER
-        /* ----------------------------------------------------------- */
-
-        $("body").toggleClass("loaded");
-        setTimeout(function() {
-            $("body").addClass("loaded");
-        }, 1000);
-
-    });
-
     $(window).on('resize',function(){
 
         /* ----------------------------------------------------------- */
@@ -313,7 +300,16 @@ $(function() {
                 });
             }
         }
-
     });
+});
+$(window).on("load", function() {
 
+    /* ----------------------------------------------------------- */
+    /*  PAGE PRELOADER
+    /* ----------------------------------------------------------- */
+
+    $("body").toggleClass("loaded");
+    setTimeout(function() {
+        $("body").addClass("loaded");
+    }, 1000);
 });
