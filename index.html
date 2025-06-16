@@ -855,21 +855,14 @@
                     <!-- Contact Boxes Ends -->
                 </div>
             </div>
-            <form id="contactForm" action="https://formsubmit.co/youremail@example.com" method="POST">
+            <form action="https://formsubmit.co/dtest8320@gmail.com" method="POST">
                 <input type="text" name="name" required placeholder="Your Name" />
                 <input type="email" name="email" required placeholder="Your Email" />
                 <textarea name="message" required placeholder="Your Message"></textarea>
-                <input type="hidden" name="_next" value="https://jaymal-web-dev.github.io/Jaymal/thank-you.html" />
-                <a href="#" id="sendLink">Send</a>
+                <button type="submit">Send</button>
+
+                <input type="hidden" name="_next" value="https://jaymal-web-dev.github.io/Jaymal">
             </form>
-
-            <script>
-                document.getElementById('sendLink').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.getElementById('contactForm').submit();
-                });
-            </script>
-
 
         </div>
         <!-- Contact Section Ends -->
