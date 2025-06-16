@@ -146,8 +146,7 @@ body.dark .meta {
 }
 
 body.dark .about-section .chart-bar,
-body.dark .about-section .resume-header p:first-child:after,
-body.dark .contact-section .separator {
+body.dark .about-section .resume-header p:first-child:after {
     background-color: #444;
 }
 
@@ -1503,9 +1502,10 @@ body.video #videobg {
 
 .contact-section .separator {
     height: 1px;
-    width: 250px;
+    width: 70%;
     background-color: #ddd;
     margin: 15px auto 45px;
+    background-color: #4caf50;
 }
 
 /* Social media Icons */
