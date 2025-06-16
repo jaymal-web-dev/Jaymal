@@ -1906,6 +1906,9 @@ body.video .home-section .home-social .social li a:hover{
     .badges:after {
         left: -230px;
     }
+    .simplebar-placeholder {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
