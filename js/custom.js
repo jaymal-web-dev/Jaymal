@@ -313,3 +313,8 @@ $(window).on("load", function() {
         $("body").addClass("loaded");
     }, 1000);
 });
+const localTime = new Date().toLocaleString("en-US", {
+    timeZone: "America/Denver",
+    timeZoneName: "short"
+});
+document.getElementById("local_time").value = localTime;

@@ -1846,6 +1846,10 @@ body.video .home-section .home-social .social li a:hover{
     }
 }
 
+.about-section ul p img {
+    margin-top: -4px;
+}
+
 /* [ RESPONSIVE DESIGN ] */
 
 /*================================================== */

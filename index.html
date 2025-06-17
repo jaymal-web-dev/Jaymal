@@ -207,16 +207,16 @@
                             <div class="row text-nowrap">
                                 <div class="d-flex col-12 col-sm-6 personal-list-container personal-list-container-1">
                                     <ul class="list-unstyled personal-info w-100">
-                                        <li><p><span class="material-icons">cake</span><span>Birthdate : </span>January 2003</p></li>
+                                        <li><p><img src="images/birthday-cake.png" alt="" style="max-width: 30px;"> <span>Birthdate : </span>January 2003</p></li>
                                         <!-- <li><p><span class="material-icons">flag</span><span>Nationality :</span>British</p></li> -->
-                                        <li><p><span class="material-icons">settings</span><span>Experience : </span>2+  years</p></li>
-                                        <li><p><span class="material-icons">location_on</span><span>Address :</span> Ahmedabad, Gujarat</p></li>
+                                        <li><p><img src="images/settings.svg" alt="" style="max-width: 30px;"> <span>Experience : </span>2+  years</p></li>
+                                        <li><p><img src="images/location.png" alt="" style="max-width: 30px;"> <span>Address :</span> Ahmedabad, Gujarat</p></li>
                                     </ul>
                                 </div>
                                 <div class="d-flex col-12 col-sm-6 personal-list-container personal-list-container-2">
                                     <ul class="list-unstyled personal-info w-100">
-                                        <li><p><span class="material-icons">call</span><span>Phone : </span>+91 83202 00213</p></li>
-                                        <li><p><span class="material-icons">email</span><span>Email :</span> jaymalpathar83@gmail.com</p></li>
+                                        <li><p><img src="images/call.png" alt="" style="max-width: 30px;"> <span>Phone : </span>+91 83202 00213</p></li>
+                                        <li><p><img src="images/email.png" alt="" style="max-width: 30px;"> <span>Email :</span> jaymalpathar83@gmail.com</p></li>
                                     </ul>
                                 </div>
                             </div>
@@ -855,16 +855,18 @@
                     <!-- Contact Boxes Ends -->
                 </div>
             </div>
-            <form action="https://formspree.io/f/xeokkybb" method="POST">
-                <label>
-                    Your email:
-                    <input type="email" name="email">
-                </label>
-                <label>
-                    Your message:
-                    <textarea name="message"></textarea>
-                </label>
-                <!-- your other form fields go here -->
+            <form action="https://getform.io/f/aejloovb" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
+
+                <!-- Hidden Honeypot to prevent spam -->
+                <input type="hidden" name="_gotcha" style="display:none !important">
+
+                <!-- Get local time -->
+                <input type="hidden" name="local_time" id="local_time">
+
                 <button type="submit">Send</button>
             </form>
 
