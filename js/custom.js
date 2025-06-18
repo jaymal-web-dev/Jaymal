@@ -342,11 +342,15 @@ document.addEventListener("DOMContentLoaded", function () {
             localTimeInput.value = new Date().toLocaleString();
         }
 
+        const fromNameInput = document.getElementById("from_name");
+        const replyToInput = document.getElementById("reply_to");
+        const messageInput = document.getElementById("message");
+
         const formParams = {
-            from_name: form.from_name.value,
-            reply_to: form.reply_to.value,
-            message: form.message.value,
-            local_time: localTimeInput.value,
+            from_name: fromNameInput ? fromNameInput.value : '', // Add checks for existence
+            reply_to: replyToInput ? replyToInput.value : '',
+            message: messageInput ? messageInput.value : '',
+            local_time: localTimeInput ? localTimeInput.value : '', // Also added a check here
             'g-recaptcha-response': recaptchaToken
         };
 
