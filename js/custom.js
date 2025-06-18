@@ -345,10 +345,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const fromNameInput = document.getElementById("name");
         const replyToInput = document.getElementById("email");
         const messageInput = document.getElementById("message");
+        const subjectInput = document.getElementById("subject");
 
         const formParams = {
             name: fromNameInput ? fromNameInput.value : '',
             reply_to: replyToInput ? replyToInput.value : '',
+            subject: subjectInput ? subjectInput.value : '',
             message: messageInput ? messageInput.value : '',
             local_time: localTimeInput ? localTimeInput.value : '',
             'g-recaptcha-response': recaptchaToken
