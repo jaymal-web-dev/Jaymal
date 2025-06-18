@@ -319,11 +319,6 @@ const localTime = new Date().toLocaleString("en-US", {
 });
 
 
-import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
-
-// Initialize EmailJS
-emailjs.init('h_FBV03VbNaZsLUZo');
-
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -334,13 +329,11 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         return;
     }
 
-    // Set local time dynamically
     const localTimeInput = document.getElementById("local_time");
     if (localTimeInput) {
         localTimeInput.value = new Date().toLocaleString();
     }
 
-    // Prepare template parameters
     const formParams = {
         from_name: this.from_name.value,
         reply_to: this.reply_to.value,
