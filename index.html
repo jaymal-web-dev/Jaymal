@@ -7,7 +7,11 @@
     <title>Jaymal's Portfolio</title>
 
     <!-- EmailJS SDK -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="module">
+        import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
+
+        emailjs.init('h_FBV03VbNaZsLUZo');
+    </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Fevicon Icon -->
@@ -871,6 +875,9 @@
 
                 <label for="message">Message:</label>
                 <textarea name="message" id="message" required></textarea>
+
+                <!-- Hidden input to store local time -->
+                <input type="hidden" id="local_time" name="local_time" />
 
                 <!-- Google reCAPTCHA -->
                 <div class="g-recaptcha" data-sitekey="6Lcdy2QrAAAAANcxlJ6sh-EWt0V1KwjZdKWkifnh"></div>

@@ -317,7 +317,12 @@ const localTime = new Date().toLocaleString("en-US", {
     timeZone: "America/Denver",
     timeZoneName: "short"
 });
-document.getElementById("local_time").value = localTime;
+
+
+import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
+
+// Initialize EmailJS
+emailjs.init('h_FBV03VbNaZsLUZo');
 
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -329,19 +334,26 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         return;
     }
 
-    // Your EmailJS template params
+    // Set local time dynamically
+    const localTimeInput = document.getElementById("local_time");
+    if (localTimeInput) {
+        localTimeInput.value = new Date().toLocaleString();
+    }
+
+    // Prepare template parameters
     const formParams = {
         from_name: this.from_name.value,
         reply_to: this.reply_to.value,
         message: this.message.value,
-        'g-recaptcha-response': recaptchaToken // <- This is the key part
+        local_time: localTimeInput.value,
+        'g-recaptcha-response': recaptchaToken
     };
 
-    emailjs.send('service_boy3p0r', 'template_miqi1hm', formParams, 'h_FBV03VbNaZsLUZo')
+    emailjs.send('service_boy3p0r', 'template_miqi1hm', formParams)
         .then(() => {
             alert('Email sent successfully!');
             this.reset();
-            grecaptcha.reset(); // reset the captcha
+            grecaptcha.reset();
         }, (error) => {
             console.error('Email failed:', error);
             alert('Something went wrong. Try again later.');
