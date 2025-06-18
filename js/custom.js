@@ -319,36 +319,46 @@ const localTime = new Date().toLocaleString("en-US", {
 });
 
 
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
 
-    const recaptchaToken = grecaptcha.getResponse();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    if (!recaptchaToken) {
-        alert("Please complete the reCAPTCHA.");
-        return;
-    }
+        if (typeof grecaptcha === "undefined") {
+            alert("reCAPTCHA is not ready yet. Please wait and try again.");
+            return;
+        }
 
-    const localTimeInput = document.getElementById("local_time");
-    if (localTimeInput) {
-        localTimeInput.value = new Date().toLocaleString();
-    }
+        const recaptchaToken = grecaptcha.getResponse();
 
-    const formParams = {
-        from_name: this.from_name.value,
-        reply_to: this.reply_to.value,
-        message: this.message.value,
-        local_time: localTimeInput.value,
-        'g-recaptcha-response': recaptchaToken
-    };
+        if (!recaptchaToken) {
+            alert("Please complete the reCAPTCHA.");
+            return;
+        }
 
-    emailjs.send('service_boy3p0r', 'template_miqi1hm', formParams)
-        .then(() => {
-            alert('Email sent successfully!');
-            this.reset();
-            grecaptcha.reset();
-        }, (error) => {
-            console.error('Email failed:', error);
-            alert('Something went wrong. Try again later.');
-        });
+        const localTimeInput = document.getElementById("local_time");
+        if (localTimeInput) {
+            localTimeInput.value = new Date().toLocaleString();
+        }
+
+        const formParams = {
+            from_name: form.from_name.value,
+            reply_to: form.reply_to.value,
+            message: form.message.value,
+            local_time: localTimeInput.value,
+            'g-recaptcha-response': recaptchaToken
+        };
+
+        emailjs.send("service_boy3p0r", "template_miqi1hm", formParams)
+            .then(() => {
+                alert("Email sent successfully!");
+                form.reset();
+                grecaptcha.reset();
+            })
+            .catch((error) => {
+                console.error("Email failed:", error);
+                alert("Something went wrong. Please try again later.");
+            });
+    });
 });
