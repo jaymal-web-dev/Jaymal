@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaymal's Portfolio</title>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!-- Fevicon Icon -->
     <link rel="icon" href="fevi.svg" type="image/png" />
 
@@ -855,29 +859,21 @@
                     <!-- Contact Boxes Ends -->
                 </div>
             </div>
-            <!-- <form action="https://getform.io/f/aejloovb" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="text" name="subject" placeholder="Subject" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message"></textarea>
+            <form id="contact-form" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" required />
 
-                <input type="hidden" name="_gotcha" style="display:none !important">
+                <label for="title">Subject:</label>
+                <input type="text" name="title" id="title" required />
 
-                <input type="hidden" name="local_time" id="local_time">
-
-                <button type="submit">Send</button>
-            </form> -->
-            <form action="https://formsubmit.co/dtest8320@gmail.com" method="POST">
-                <input type="hidden" name="_next" value="https://jaymal-web-dev.github.io/Jaymal/thank-you.html">
-
-                <label for="name">Name:</label>
-                <input type="text" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" required>
+                <label for="email">Your Email:</label>
+                <input type="email" name="email" id="email" required />
 
                 <label for="message">Message:</label>
-                <textarea name="message" required></textarea>
+                <textarea name="message" id="message" required></textarea>
+
+                <!-- Google reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6Lcdy2QrAAAAANcxlJ6sh-EWt0V1KwjZdKWkifnh"></div>
 
                 <button type="submit">Send</button>
             </form>
