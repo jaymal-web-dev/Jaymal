@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formParams = {
             name: fromNameInput ? fromNameInput.value : '',
-            email: replyToInput ? replyToInput.value : '',
+            reply_to: replyToInput ? replyToInput.value : '',
             message: messageInput ? messageInput.value : '',
             local_time: localTimeInput ? localTimeInput.value : '',
             'g-recaptcha-response': recaptchaToken
