@@ -7,8 +7,14 @@
     <title>Jaymal's Portfolio</title>
 
     <!-- Load EmailJS SDK v4 from official CDN -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>(function () {emailjs.init("h_FBV03VbNaZsLUZo");})();</script>
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "h_FBV03VbNaZsLUZo",
+            });
+        })();
+    </script>
 
 
     <!-- Fevicon Icon -->
