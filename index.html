@@ -16,6 +16,7 @@
         })();
     </script>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <!-- Google recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -63,6 +64,7 @@
 </head>
 
 <body class="index dark">
+    <div id="particles-js"></div>
     <div id="wrapper" class="page" data-simplebar>
         <!-- Live Style Switcher Starts - demo only -->
         <!-- <div id="switcher" class="">
@@ -152,7 +154,7 @@
         <div class="home-section" id="home">
             <div class="home-content">
                 <!-- Animated Background Starts -->
-                <ul class="circles">
+                <!-- <ul class="circles">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -163,7 +165,7 @@
                     <li></li>
                     <li></li>
                     <li></li>
-                </ul>
+                </ul> -->
                 <!-- Animated Background Ends -->
                 <!-- Background Dotted Pattern Starts -->
                 <div class="right-dotted-shape"></div>
@@ -215,6 +217,15 @@
                     <div class="row infos-holder align-items-center">
                         <div class="col-12 col-lg-5">
                             <!-- <img class="img-fluid d-block photo" src="images/man.jpg" alt="" /> -->
+                            <div class="position-relative floating">
+                                <div class="w-80 h-80 overflow-hidden animated-border liquid">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=688&amp;q=80" alt="Designer Portrait" class="w-full h-full object-cover">
+                                </div>
+                                <div class="position-absolute bottom-6 right-6 glass p-4 rounded-lg text-white">
+                                    <div>2+ Years</div>
+                                    <div>Experience</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-12 col-lg-7">
                             <p class="m-0">I'm Jaymal Pathar, a professional web designer based in Ahmedabad, specializing in the creation of clean, creative, and user-friendly digital experiences. I am dedicated to building aesthetically pleasing and highly functional websites that deliver exceptional value to users.</p>
@@ -842,25 +853,27 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-8">
-                            <form class="formcontact" method="post" action="php/process-form.php">
+                            <form id="contact-form" class="formcontact" method="post">
                                 <div class="row contactform">
                                     <div class="col-12 col-md-4">
-                                        <input type="text" name="name" placeholder="YOUR NAME" autocomplete="off">
+                                        <input type="text" name="name" id="name" required placeholder="YOUR NAME" autocomplete="off">
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <input type="text" name="name" placeholder="SUBJECT" autocomplete="off">
+                                        <input type="text" name="subject" id="subject" required placeholder="SUBJECT" autocomplete="off">
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <input type="email" name="email" placeholder="YOUR EMAIL" autocomplete="off">
+                                        <input type="email" name="reply_to" id="email" required placeholder="YOUR EMAIL" autocomplete="off">
                                     </div>
                                     <div class="col-12">
-                                        <textarea name="message" placeholder="YOUR MESSAGE"></textarea>
+                                        <textarea name="message" id="message" required placeholder="YOUR MESSAGE"></textarea>
+
+                                        <!-- Hidden input to store local time -->
+                                        <input type="hidden" id="local_time" name="local_time" />
                                     </div>
                                     <div class="col-12">
+                                        <!-- Google reCAPTCHA -->
+                                        <div class="g-recaptcha" data-sitekey="6Lcdy2QrAAAAANcxlJ6sh-EWt0V1KwjZdKWkifnh"></div>
                                         <button type="submit" class="btn main-btn"><span>Send Message</span></button>
-                                    </div>
-                                    <div class="col-12 form-message d-none">
-                                        <span class="output_message text-center text-uppercase"></span>
                                     </div>
                                 </div>
                             </form>
@@ -869,27 +882,6 @@
                     <!-- Contact Boxes Ends -->
                 </div>
             </div>
-            <form id="contact-form" method="POST">
-                <label for="name">Your Name:</label>
-                <input type="text" name="name" id="name" required />
-
-                <label for="title">Subject:</label>
-                <input type="text" name="subject" id="subject" required />
-
-                <label for="email">Your Email:</label>
-                <input type="email" name="reply_to" id="email" required />
-
-                <label for="message">Message:</label>
-                <textarea name="message" id="message" required></textarea>
-
-                <!-- Hidden input to store local time -->
-                <input type="hidden" id="local_time" name="local_time" />
-
-                <!-- Google reCAPTCHA -->
-                <div class="g-recaptcha" data-sitekey="6Lcdy2QrAAAAANcxlJ6sh-EWt0V1KwjZdKWkifnh"></div>
-
-                <button type="submit">Send</button>
-            </form>
 
         </div>
         <!-- Contact Section Ends -->
