@@ -939,7 +939,7 @@ body.video #videobg {
 }
 
 .owl-carousel {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .owl-carousel.visiblecarousel {
@@ -1791,7 +1791,7 @@ body.video .home-section .home-social .social li a:hover{
     background: rgba(76, 175, 80, .2)
 }
 
-#link-about {
+#lg-button {
     width: 220px;
     height: 50px;
     border: none;
@@ -1804,7 +1804,7 @@ body.video .home-section .home-social .social li a:hover{
     border-radius: 10px;
 }
 
-#link-about:before {
+#lg-button:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
@@ -1820,7 +1820,31 @@ body.video .home-section .home-social .social li a:hover{
     border-radius: 10px;
 }
 
-#link-about:after {
+.xp-info:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff00c8, #7a00ff, #002bff, #00ffd5, #48ff00, #fffb00, #ff7300, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+div.xp-info:after {
+    width: 95%;
+    height: 95%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#lg-button:after, .xp-info:after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -1846,8 +1870,13 @@ body.video .home-section .home-social .social li a:hover{
     }
 }
 
+.contactform .send-msg {
+    margin-top: 30px;
+}
+
 .about-section ul p img {
-    margin-top: -4px;
+    margin-top: 1px;
+    margin-right: 5px;
 }
 #particles-js {
     position: absolute;
