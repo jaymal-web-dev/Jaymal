@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        // Check if reCAPTCHA is ready
         if (typeof grecaptcha === "undefined") {
             alert("reCAPTCHA is not ready yet. Please wait and try again.");
             return;
@@ -252,16 +253,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const recaptchaToken = grecaptcha.getResponse();
 
+        // Ensure reCAPTCHA is completed
         if (!recaptchaToken) {
             alert("Please complete the reCAPTCHA.");
             return;
         }
 
+        // Set local date and time
+        const localDateInput = document.getElementById("local_date");
         const localTimeInput = document.getElementById("local_time");
-        if (localTimeInput) {
-            localTimeInput.value = new Date().toLocaleString();
+        const now = new Date();
+
+        if (localDateInput) {
+            localDateInput.value = now.toLocaleDateString();  // e.g., "6/30/2025"
         }
 
+        if (localTimeInput) {
+            localTimeInput.value = now.toLocaleTimeString();  // e.g., "5:11:10 PM"
+        }
+
+        // Get form values
         const fromNameInput = document.getElementById("name");
         const replyToInput = document.getElementById("email");
         const messageInput = document.getElementById("message");
@@ -272,10 +283,12 @@ document.addEventListener("DOMContentLoaded", function () {
             reply_to: replyToInput ? replyToInput.value : '',
             subject: subjectInput ? subjectInput.value : '',
             message: messageInput ? messageInput.value : '',
+            local_date: localDateInput ? localDateInput.value : '',
             local_time: localTimeInput ? localTimeInput.value : '',
             'g-recaptcha-response': recaptchaToken
         };
 
+        // Send email using EmailJS
         emailjs.send("service_boy3p0r", "template_miqi1hm", formParams)
             .then(() => {
                 alert("Email sent successfully!");
