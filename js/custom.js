@@ -6,9 +6,9 @@ $(function() {
     /*  REMOVE # FROM URL
     /* ----------------------------------------------------------- */
 
-    $("a[href='#']").on("click", (function(e) {
+    /* $("a[href='#']").on("click", (function(e) {
         e.preventDefault();
-    }));
+    })); */
 
     /* ----------------------------------------------------------- */
     /*  MENU ANIMATION
@@ -57,59 +57,6 @@ $(function() {
             $('.item-title-hover').removeClass('visible');
         });
     });
-
-    /* ----------------------------------------------------------- */
-    /*  PAGE TRANSITION
-    /* ----------------------------------------------------------- */
-
-    var links = [...document.querySelectorAll('.link-page')];
-    var breaker = document.querySelector('#transitionblock');
-    links.forEach(link => link.addEventListener('click', function (e) {
-        var $el = $(this);
-        setTimeout(function () {
-            $('#main-navigation li a').removeClass('active');
-            $el.addClass('active');
-        }, 1000);
-        e.preventDefault();
-        var page = link.getAttribute("href");
-        if (document.querySelector(page)) {
-            if (page != "#home") {
-                setTimeout(function () {
-                    $('#wrapper').css('overflow','auto');
-                }, 1000);
-            } else {
-                setTimeout(function () {
-                    $('#wrapper').css('overflow','hidden');
-                }, 1000);
-            }
-            function transitionblock() {
-                breaker.style.display = 'block';
-                breaker.addEventListener('animationend', function () {
-                    this.style.display = "none";
-                })
-            }
-            transitionblock()
-            function changepage() {
-                var pages = links.map(a => a.getAttribute("href"))
-                if ($(window).width() > 991) {
-                    setTimeout(function () {
-                        pages.forEach(a => document.querySelector(a).style.display = 'none');
-                        document.querySelector(page).style.display = 'block';
-                        $( ".simplebar-content-wrapper" ).scrollTop(0);
-
-                    }, 1000);
-                } else {
-                    setTimeout(function () {
-                        pages.forEach(a => document.querySelector(a).style.display = 'none');
-                        document.querySelector(page).style.display = 'block';
-                        $("#wrapper").scrollTop(0);
-
-                    }, 1000);
-                }
-            }
-            changepage()
-        }
-    }))
 
     /* ----------------------------------------------------------- */
     /*  EXPERIENCE & EDUCATION CAROUSELS

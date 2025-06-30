@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaymal's Portfolio</title>
+
+    <!-- Load EmailJS SDK v4 from official CDN -->
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "h_FBV03VbNaZsLUZo",
+            });
+        })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Google recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Fevicon Icon -->
+    <link rel="icon" href="fevi.svg" type="image/png" />
+
+    <!-- Material Icons Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Template Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="alternate stylesheet" type="text/css" title="green" href="css/green.css" />
+    <link rel="stylesheet" type="text/css" href="css/styleswitcher.css" />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="css/text/css" href="owl.carousel.min.css" />
+    <link rel="stylesheet" type="css/text/css" href="owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Modernizr JS File -->
+    <script src="js/modernizr.js"></script>
+</head>
+
+<body class="index dark">
+    <div id="particles-js"></div>
+    <div id="wrapper" class="page">
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        <!-- Transition Block Starts -->
+        <div id="transitionblock"></div>
+        <!-- Transition Block Ends -->
+        <!-- Desktop Menu Starts -->
+        <div id="navigation" class="is-fixed">
+            <a href="#" class="navigation-trigger">Menu<span></span></a>
+            <nav id="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="link-page link-home active"><span class="material-icons">home</span>home</a></li>
+                    <li><a href="about-me.html" class="link-page link-about"><span class="material-icons">article</span>about</a></li>
+                    <li><a href="portfolio.html" class="link-page link-work"><span class="material-icons">cases</span>portfolio</a></li>
+                    <li><a href="contact.html" class="link-page"><span class="material-icons">email</span>contact</a></li>
+                    <li><a href="blog.html" class="link-page"><span class="material-icons">topic</span>blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Desktop Menu Ends -->
+
+        <!-- Contact Section Starts -->
+        <div class="section contact-section" id="contact">
+            <div id="contact-content">
+                <!-- Heading Starts -->
+                <div class="heading text-left text-md-center">
+                    <h2>get <span>in touch</span></h2>
+                </div>
+                <!-- Heading Ends -->
+                <div class="container">
+                    <!-- Contact Boxes Starts -->
+                    <div class="row boxes">
+                        <!-- Contact Box Item Starts -->
+                        <div class="col-12 col-lg-4">
+                            <div class="box">
+                                <span class="material-icons">call</span>
+                                <p>+91 83202 00213</p>
+                            </div>
+                        </div>
+                        <!-- Contact Box Item Ends -->
+                        <!-- Contact Box Item Starts -->
+                        <div class="col-12 col-lg-4">
+                            <div class="box">
+                                <span class="material-icons">email</span>
+                                <p>jaymalpathar83@gmail.com</p>
+                            </div>
+                        </div>
+                        <!-- Contact Box Item Ends -->
+                        <!-- Contact Box Item Starts -->
+                        <div class="col-12 col-lg-4">
+                            <div class="box last-box">
+                                <span class="material-icons">location_on</span>
+                                <p>Ahmedabad, Gujarat</p>
+                            </div>
+                        </div>
+                        <!-- Contact Box Item Ends -->
+                    </div>
+                    <!-- Contact Boxes Ends -->
+                    <div class="separator"></div>
+                    <!-- Contact Form Starts -->
+                    <div class="row">
+                        <div class="col-12 col-lg-4 leftside">
+                            <div>
+                                <h4 class="mb-0">send me an email</h4>
+                                <p>Feel free to get in touch with me. I am always open to discussing new projects or creative ideas.</p>
+                            </div>
+                            <div>
+                                <h4>follow me</h4>
+                                <!-- Social Media Starts -->
+                                <ul class="social list-unstyled mb-5 mb-lg-0 p-0 d-flex">
+                                    <li class="facebook"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="youtube"><a title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="dribbble"><a title="behance" href="#"><i class="fa fa-behance"></i></a></li>
+                                </ul>
+                                <!-- Social Media Ends -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <form id="contact-form" class="formcontact" method="post">
+                                <div class="row contactform">
+                                    <div class="col-12 col-md-4">
+                                        <input type="text" name="name" id="name" required placeholder="YOUR NAME" autocomplete="off">
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <input type="text" name="subject" id="subject" required placeholder="SUBJECT" autocomplete="off">
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <input type="email" name="reply_to" id="email" required placeholder="YOUR EMAIL" autocomplete="off">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="message" id="message" required placeholder="YOUR MESSAGE"></textarea>
+
+                                        <!-- Hidden input to store local time -->
+                                        <input type="hidden" id="local_time" name="local_time" />
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Google reCAPTCHA -->
+                                        <div class="g-recaptcha" data-sitekey="6Lcdy2QrAAAAANcxlJ6sh-EWt0V1KwjZdKWkifnh"></div>
+                                        <button id="lg-button" type="submit" class="btn main-btn send-msg"><span>Send Message</span></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Contact Boxes Ends -->
+                </div>
+            </div>
+        </div>
+        <!-- Contact Section Ends -->
+    </div>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/main_portfolio.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Only demo -->
+    <script src="js/styleswitcher.js"></script>
+</body>
+</html>

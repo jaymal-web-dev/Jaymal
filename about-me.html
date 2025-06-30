@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaymal's Portfolio</title>
+
+    <!-- Load EmailJS SDK v4 from official CDN -->
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "h_FBV03VbNaZsLUZo",
+            });
+        })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Google recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Fevicon Icon -->
+    <link rel="icon" href="fevi.svg" type="image/png" />
+
+    <!-- Material Icons Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Template Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="alternate stylesheet" type="text/css" title="green" href="css/green.css" />
+    <link rel="stylesheet" type="text/css" href="css/styleswitcher.css" />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="css/text/css" href="owl.carousel.min.css" />
+    <link rel="stylesheet" type="css/text/css" href="owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Modernizr JS File -->
+    <script src="js/modernizr.js"></script>
+</head>
+
+<body class="index dark">
+    <div id="particles-js"></div>
+    <div id="wrapper" class="page">
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+        </div>
+        <!-- Transition Block Starts -->
+        <div id="transitionblock"></div>
+        <!-- Transition Block Ends -->
+        <!-- Desktop Menu Starts -->
+        <div id="navigation" class="is-fixed">
+            <a href="#" class="navigation-trigger">Menu<span></span></a>
+            <nav id="main-navigation">
+                <ul>
+                    <li><a href="index.html" class="link-page link-home active"><span class="material-icons">home</span>home</a></li>
+                    <li><a href="about-me.html" class="link-page link-about"><span class="material-icons">article</span>about</a></li>
+                    <li><a href="portfolio.html" class="link-page link-work"><span class="material-icons">cases</span>portfolio</a></li>
+                    <li><a href="contact.html" class="link-page"><span class="material-icons">email</span>contact</a></li>
+                    <li><a href="blog.html" class="link-page"><span class="material-icons">topic</span>blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Desktop Menu Ends -->
+
+        <!-- About Section Starts -->
+        <div class="section about-section" id="about">
+            <div id="about-content">
+                <!-- Heading Starts -->
+                <div class="heading text-left text-md-center">
+                    <h2>about <span>me</span></h2>
+                </div>
+                <!-- Heading Ends -->
+                <!-- Personal Infos Starts -->
+                <div class="container infos">
+                    <div class="row infos-holder align-items-center">
+                        <div class="col-12 col-lg-5">
+                            <div class="position-relative floating">
+                                <div class="w-80 h-80 overflow-hidden animated-border liquid">
+                                    <!-- <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=688&amp;q=80" alt="Designer Portrait" class="w-full h-full object-cover"> -->
+                                </div>
+                                <div class="xp-info position-absolute bottom-6 right-6 glass p-4 rounded-lg text-white">
+                                    <div>2+ Years</div>
+                                    <div>Experience</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-7">
+                            <p class="m-0">I'm Jaymal Pathar, a professional web designer based in Ahmedabad, specializing in the creation of clean, creative, and user-friendly digital experiences. I am dedicated to building aesthetically pleasing and highly functional websites that deliver exceptional value to users.</p>
+                            <div class="row text-nowrap">
+                                <div class="d-flex col-12 col-sm-6 personal-list-container personal-list-container-1">
+                                    <ul class="list-unstyled personal-info w-100">
+                                        <li><p class="d-flex"><img src="images/birthday-cake.png" alt="birthday-cake" style="max-width: 30px; max-height: 30px;"> <span>Birthdate : </span>January 2003</p></li>
+                                        <!-- <li><p><span class="material-icons">flag</span><span>Nationality :</span>British</p></li> -->
+                                        <li><p class="d-flex"><img src="images/settings.svg" alt="settings" style="max-width: 30px; max-height: 30px;"> <span>Experience : </span>2+  years</p></li>
+                                        <li><p class="d-flex"><img src="images/location.png" alt="location" style="max-width: 30px; max-height: 30px;"> <span>Address :</span> Ahmedabad, Gujarat</p></li>
+                                    </ul>
+                                </div>
+                                <div class="d-flex col-12 col-sm-6 personal-list-container personal-list-container-2">
+                                    <ul class="list-unstyled personal-info w-100">
+                                        <li><p class="d-flex"><img src="images/call.png" alt="call" style="max-width: 30px; max-height: 30px;"> <span>Phone : </span>+91 83202 00213</p></li>
+                                        <li><p class="d-flex"><img src="images/email.png" alt="email" style="max-width: 30px; max-height: 30px;"> <span>Email :</span> jaymalpathar83@gmail.com</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Download CV Starts -->
+                            <a href="#" id="lg-button" class="btn main-btn"><span>download my cv</span></a>
+                            <!-- Download CV Ends -->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Personal Infos Ends -->
+                <!-- Resume Starts -->
+                <div class="w-100 resume">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 pl-0">
+                                <h4 class="subtitle text-center">My resume</h4>
+                            </div>
+                            <div class="resume-header">
+                                <p class="active" id="experience">experience</p>
+                                <p id="education">education</p>
+                            </div>
+                            <div class="col-12 resume-holder">
+                                <!-- Experience Starts -->
+                                <div id="experiencecarousel" class="owl-carousel owl-theme visiblecarousel">
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Web Developer</h5>
+                                            <h6 class="mb-0">2018 - now</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Adobe</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Designer</h5>
+                                            <h6 class="mb-0">2014 - 2018</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Twitter</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Consultant</h5>
+                                            <h6 class="mb-0">2006 - 2014</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Facebook</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Professor</h5>
+                                            <h6 class="mb-0">2010 - 2014</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Envato</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Engineer</h5>
+                                            <h6 class="mb-0">2006 - 2010</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Google</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Writer</h5>
+                                            <h6 class="mb-0">2006 - 2010</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">IBM</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Internship</h5>
+                                            <h6 class="mb-0">2005 - 2010</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Yahoo</span>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <!-- Experience Ends -->
+                                <!-- Education Starts -->
+                                <div id="educationcarousel" class="owl-carousel owl-theme hiddencarousel">
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Engineering Degree</h5>
+                                            <h6 class="mb-0">2015</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Oxford University</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Master Degree</h5>
+                                            <h6 class="mb-0">2012</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Moscow University</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Bachelor Degree</h5>
+                                            <h6 class="mb-0">2009</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Tunis High School</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Tech Degree</h5>
+                                            <h6 class="mb-0">2007</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Paris High School</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">College Degree</h5>
+                                            <h6 class="mb-0">2005</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Berlin High School</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">High School Degree</h5>
+                                            <h6 class="mb-0">2003</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Tokyo High School</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                    <div class="resume-item item">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">School Degree</h5>
+                                            <h6 class="mb-0">2001</h6>
+                                        </div>
+                                        <span class="company d-inline-block mb-2">Madrid High School</span>
+                                        <p>Curabitur mollis bibendum luctus. Duis suscipit vitae dui metus sollicitudin sed suscipit.</p>
+                                    </div>
+                                </div>
+                                <!-- Education Ends -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resume Ends -->
+                <!-- <div class="badges">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12 col-md-4">
+                                <span class="material-icons">cases</span>
+                                <h3>2+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <span class="material-icons">thumb_up</span>
+                                <h3>56</h3>
+                                <p>done projects</p>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <span class="material-icons">favorite</span>
+                                <h3>89</h3>
+                                <p>happy customers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <section class="counter-section">
+                    <div class="level">
+                        <div class="counter-item">
+                            <div class="counter-number">
+                                <span class="js-count-up" data-value="2" data-suffix="+">0</span>
+                            </div>
+                            <div class="counter-label">Years of Experiences</div>
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-number">
+                                <span class="js-count-up" data-value="100" data-suffix="%" data-decimal-places="1">0</span>
+                            </div>
+                            <div class="counter-label">Clients Satisfaction Rate</div>
+                        </div>
+                        <div class="counter-item">
+                            <div class="counter-number">
+                                <span class="js-count-up" data-value="10">0</span>
+                            </div>
+                            <div class="counter-label">done projects</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Fun Facts Ends -->
+                <!-- Skills Starts -->
+                <div class="container skills">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="subtitle">
+                                <!--<span class="material-icons">download_done</span>-->
+                                My skills
+                            </h4>
+                        </div>
+                        <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text">HTML</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="100" style="width: 100%;"></span>
+                                <span class="percent" style="right: 4.5%;">100%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                        <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text">Javscript</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="70" style="width: 70%;"></span>
+                                <span class="percent" style="right: 30%;">70%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                        <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text">CSS</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="100" style="width: 100%;"></span>
+                                <span class="percent" style="right: 4.5%;">100%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                        <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text ">jQuery</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="70" style="width: 70%;"></span>
+                                <span class="percent" style="right: 30%;">70%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                        <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text ">Figma</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="80" style="width: 80%;"></span>
+                                <span class="percent" style="right: 20%;">80%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                        <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text ">Photoshop</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="60" style="width: 60%;"></span>
+                                <span class="percent" style="right: 40%;">60%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                         <!-- Skill Bar Starts -->
+                        <div class="col-12 col-md-6">
+                            <span class="skill-text ">XD</span>
+                            <div class="chart-bar">
+                                <span class="item-progress" data-percent="80" style="width: 80%;"></span>
+                                <span class="percent" style="right: 20%;">80%<span class="arrow"></span></span>
+                            </div>
+                        </div>
+                        <!-- Skill Bar Ends -->
+                    </div>
+                </div>
+                <!-- Skills Ends -->
+                <!-- Fun Facts Starts -->
+            </div>
+        </div>
+        <!-- About Section Ends -->
+    </div>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/main_portfolio.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Only demo -->
+    <script src="js/styleswitcher.js"></script>
+
+    <script type="module">
+        import { CountUp } from 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.js';
+
+        const counters = document.querySelectorAll(".js-count-up");
+        const defaultOptions = {
+            useEasing: true,
+            useGrouping: true,
+            separator: ",",
+            decimal: ".",
+            duration: 5.0
+        };
+
+        const countUpMap = new Map();
+
+        function countUpSingle(item) {
+            const value = item.dataset.value;
+            const suffix = item.dataset.suffix || '';
+            const decimalPlaces = item.dataset.decimalPlaces
+                ? parseInt(item.dataset.decimalPlaces)
+                : (value.includes('.') ? 1 : 0);
+            const duration = item.dataset.duration
+                ? parseFloat(item.dataset.duration)
+                : defaultOptions.duration;
+
+            const countUp = new CountUp(item, value, {
+                ...defaultOptions,
+                suffix,
+                decimalPlaces,
+                duration
+            });
+
+            if (!countUp.error) {
+                countUp.start();
+                countUpMap.set(item, countUp);
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                if (entry.isIntersecting) {
+                    countUpSingle(el);
+                } else {
+                    // Reset when element leaves view so it can animate again on re-entry
+                    el.textContent = '0';
+                    countUpMap.delete(el);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => {
+            counter.textContent = '0';
+            observer.observe(counter);
+        });
+    </script>
+</body>
+</html>
