@@ -3,14 +3,6 @@ $(function() {
     "use strict";
 
     /* ----------------------------------------------------------- */
-    /*  REMOVE # FROM URL
-    /* ----------------------------------------------------------- */
-
-    /* $("a[href='#']").on("click", (function(e) {
-        e.preventDefault();
-    })); */
-
-    /* ----------------------------------------------------------- */
     /*  MENU ANIMATION
     /* ----------------------------------------------------------- */
 
@@ -162,23 +154,32 @@ $(function() {
     /*  UPDATE ACTIVE ITEMS IN NAVIGATION
     /* ----------------------------------------------------------- */
 
-    $('#link-about').on('click', function() {
-        setTimeout(function () {
-            $('#main-navigation li a').removeClass('active');
-            $('#main-navigation li a.link-about').addClass('active');
-            if ($('.navigation-trigger').hasClass('menu-is-open')) {
-                $('.navigation-trigger').click();
+    $(document).ready(function() {
+        // Get the current file name from the URL
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+
+        // Default to 'index.html' if path is empty (like on root /)
+        if (page === "") {
+            page = "index.html";
+        }
+
+        // Remove 'active' class from all link-page elements
+        $(".link-page").removeClass("active");
+
+        // Add 'active' class to the matching link
+        $(".link-page").each(function(){
+            if($(this).attr("href") === page){
+                $(this).addClass("active");
             }
-            ResumeCarousels();
-        }, 1000);
+        });
     });
 
+    /* ----------------------------------------------------------- */
+    /*  RE-INITIALIZE OWL CAROUSEL ON RESIZE
+    /* ----------------------------------------------------------- */
+
     $(window).on('resize',function(){
-
-        /* ----------------------------------------------------------- */
-        /*  RE-INITIALIZE OWL CAROUSEL ON RESIZE
-        /* ----------------------------------------------------------- */
-
         if ($("body").hasClass("index")) {
             $('#experiencecarousel').owlCarousel('destroy');
             $('#educationcarousel').owlCarousel('destroy');
@@ -221,191 +222,191 @@ $(function() {
             }
         }
     });
-});
-$(window).on("load", function() {
 
     /* ----------------------------------------------------------- */
     /*  PAGE PRELOADER
     /* ----------------------------------------------------------- */
 
-    $("body").toggleClass("loaded");
-    setTimeout(function() {
-        $("body").addClass("loaded");
-    }, 1000);
-});
-const localTime = new Date().toLocaleString("en-US", {
-    timeZone: "America/Denver",
-    timeZoneName: "short"
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Check if reCAPTCHA is ready
-        if (typeof grecaptcha === "undefined") {
-            alert("reCAPTCHA is not ready yet. Please wait and try again.");
-            return;
-        }
-
-        const recaptchaToken = grecaptcha.getResponse();
-
-        // Ensure reCAPTCHA is completed
-        if (!recaptchaToken) {
-            alert("Please complete the reCAPTCHA.");
-            return;
-        }
-
-        // Set local date and time
-        const localDateInput = document.getElementById("local_date");
-        const localTimeInput = document.getElementById("local_time");
-        const now = new Date();
-
-        if (localDateInput) {
-            localDateInput.value = now.toLocaleDateString();  // e.g., "6/30/2025"
-        }
-
-        if (localTimeInput) {
-            localTimeInput.value = now.toLocaleTimeString();  // e.g., "5:11:10 PM"
-        }
-
-        // Get form values
-        const fromNameInput = document.getElementById("name");
-        const replyToInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
-        const subjectInput = document.getElementById("subject");
-
-        const formParams = {
-            name: fromNameInput ? fromNameInput.value : '',
-            reply_to: replyToInput ? replyToInput.value : '',
-            subject: subjectInput ? subjectInput.value : '',
-            message: messageInput ? messageInput.value : '',
-            local_date: localDateInput ? localDateInput.value : '',
-            local_time: localTimeInput ? localTimeInput.value : '',
-            'g-recaptcha-response': recaptchaToken
-        };
-
-        // Send email using EmailJS
-        emailjs.send("service_boy3p0r", "template_miqi1hm", formParams)
-            .then(() => {
-                alert("Email sent successfully!");
-                form.reset();
-                grecaptcha.reset();
-            })
-            .catch((error) => {
-                console.error("Email failed:", error);
-                alert("Something went wrong. Please try again later.");
-            });
+    $(window).on("load", function() {
+        $("body").toggleClass("loaded");
+            setTimeout(function() {
+                $("body").addClass("loaded");
+            }, 1000);
+        });
+        const localTime = new Date().toLocaleString("en-US", {
+            timeZone: "America/Denver",
+            timeZoneName: "short"
     });
-});
 
+    /* ----------------------------------------------------------- */
+    /*  CONTACT FORM VALIDATION
+    /* ----------------------------------------------------------- */
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contact-form");
 
-particlesJS('particles-js', {
-    "particles": {
-        "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 800
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            if (typeof grecaptcha === "undefined") {
+                alert("reCAPTCHA is not ready yet. Please wait and try again.");
+                return;
             }
-        },
-        "color": {
-            "value": ["#00c9b7", "#ff6b6b", "#ffd166"]
-        },
-        "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
+
+            const recaptchaToken = grecaptcha.getResponse();
+
+            if (!recaptchaToken) {
+                alert("Please complete the reCAPTCHA.");
+                return;
             }
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
+
+            const localDateInput = document.getElementById("local_date");
+            const localTimeInput = document.getElementById("local_time");
+            const now = new Date();
+
+            if (localDateInput) {
+                localDateInput.value = now.toLocaleDateString();
             }
-        },
-        "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
+
+            if (localTimeInput) {
+                localTimeInput.value = now.toLocaleTimeString();
             }
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#00c9b7",
-            "opacity": 0.4,
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-        }
-    },
-    "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "grab"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-        },
-        "modes": {
-            "grab": {
-                "distance": 140,
-                "line_linked": {
-                    "opacity": 1
+
+            const fromNameInput = document.getElementById("name");
+            const replyToInput = document.getElementById("email");
+            const messageInput = document.getElementById("message");
+            const subjectInput = document.getElementById("subject");
+
+            const formParams = {
+                name: fromNameInput ? fromNameInput.value : '',
+                reply_to: replyToInput ? replyToInput.value : '',
+                subject: subjectInput ? subjectInput.value : '',
+                message: messageInput ? messageInput.value : '',
+                local_date: localDateInput ? localDateInput.value : '',
+                local_time: localTimeInput ? localTimeInput.value : '',
+                'g-recaptcha-response': recaptchaToken
+            };
+
+            emailjs.send("service_boy3p0r", "template_miqi1hm", formParams)
+                .then(() => {
+                    alert("Email sent successfully!");
+                    form.reset();
+                    grecaptcha.reset();
+                })
+                .catch((error) => {
+                    console.error("Email failed:", error);
+                    alert("Something went wrong. Please try again later.");
+                });
+        });
+    });
+
+    /* ----------------------------------------------------------- */
+    /*  PARTICLES ANIMATION JS
+    /* ----------------------------------------------------------- */
+
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
                 }
             },
-            "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
+            "color": {
+                "value": ["#00c9b7", "#ff6b6b", "#ffd166"]
             },
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
             },
-            "push": {
-                "particles_nb": 4
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
             },
-            "remove": {
-                "particles_nb": 2
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#00c9b7",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
             }
-        }
-    },
-    "retina_detect": true
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
 });

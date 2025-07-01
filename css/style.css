@@ -1918,10 +1918,6 @@ video {
     overflow: initial !important;
 }
 
-.simplebar-content-wrapper {
-    overflow: hidden scroll !important;
-}
-
 /* For Chrome, Safari, and Edge */
 ::-webkit-scrollbar {
     width: 7px;
