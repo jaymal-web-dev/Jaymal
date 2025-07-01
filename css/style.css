@@ -1672,9 +1672,19 @@ body.video .home-section .home-social .social li a:hover {
 }
 
 .right-dotted-shape,
-.badges:after {
+.counter-section:after {
     background: radial-gradient(circle at center, #4caf50 10%, transparent 20%), transparent;
     background-size: 19px 18px;
+    animation: moveDots 2s linear infinite;
+}
+
+@keyframes moveDots {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 19px 18px;
+    }
 }
 
 #lg-button {
