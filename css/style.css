@@ -1683,6 +1683,7 @@ body.video .home-section .home-social .social li a:hover {
     0% {
         background-position: 0 0;
     }
+    
     100% {
         background-position: 19px 18px;
     }
