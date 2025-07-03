@@ -60,10 +60,6 @@ body p {
 }
 #wrapper {
     height: 100%;
-    overflow: hidden;
-}
-body:not(.index) #wrapper {
-    overflow: auto;
 }
 .right-dotted-shape {
     position: absolute;
@@ -1722,9 +1718,6 @@ video {
 }
 .p-4 {
     padding: 1rem;
-}
-#wrapper {
-    overflow: initial !important;
 }
 ::-webkit-scrollbar {
     width: 7px;
